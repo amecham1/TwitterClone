@@ -1,9 +1,11 @@
 $(document).ready(function() {
     // Tweet input box animations
 
+    jQuery("time.timeago").timeago();
+
     var userName = "Andrew";
     var profilePic = "alagoon";
-
+    var tweetText;
     $('#tweet-controls').hide();
 
     $(".tweet-compose").click(function() {
@@ -24,7 +26,8 @@ $(document).ready(function() {
 
     $(".tweet-compose").on("keyup", counter);
 // steps 1 through 4;
-  tweetText = $('.tweet-compose').val();
+  var len = $(this).val().length;
+  tweetText = $(".tweet-compose").val();
     function counter() {
         var newCount = $('.tweet-compose').val().length;
         console.log(newCount);
@@ -53,5 +56,7 @@ $(document).ready(function() {
         $('#char-count').text("140");
     }
 });
+
+
 
     });
